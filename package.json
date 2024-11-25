@@ -62,9 +62,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/0xharshrastogi/moi-keystore/issues"
+    "url": "https://github.com/0xharshrastogi/crypto-keystore/issues"
   },
-  "homepage": "https://github.com/0xharshrastogi/moi-keystore#readme",
+  "homepage": "https://github.com/0xharshrastogi/crypto-keystore#readme",
   "dependencies": {
     "ethereum-cryptography": "^3.0.0"
   },
