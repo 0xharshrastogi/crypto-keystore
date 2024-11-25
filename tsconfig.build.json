@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["es2023", "DOM"],
+    "target": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    "declaration": true,
+    "inlineSourceMap": true
+  },
+  "exclude": ["node_modules", "dist"]
+}

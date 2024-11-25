@@ -1,0 +1,80 @@
+{
+  "name": "crypto-keystore",
+  "version": "1.0.0",
+  "description": "A JavaScript library for generating and managing keystores, supporting various encryption algorithms for secure data storage and decryption.",
+  "type": "module",
+  "browser": {
+    "./dist/lib.esm/src/crypto-utils.js": "./dist/lib.esm/src/browser/crypto-utils.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/lib.esm/index.js",
+      "require": "./dist/lib.cjs/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.build.json --outDir dist/lib.cjs --module commonjs",
+    "build:esm": "tsc -p tsconfig.build.json --outDir dist/lib.esm --module nodenext --moduleResolution nodenext",
+    "build": "pnpm build:cjs & pnpm build:esm",
+    "build:clean": "rimraf dist/lib.* && pnpm build",
+    "clean": "rimraf dist",
+    "test": "tsx --test ./test/**/*.ts",
+    "test:coverage": "tsx --test --experimental-test-coverage ./test/**/*.ts",
+    "pack": "npm pack --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xharshrastogi/crypto-keystore.git"
+  },
+  "keywords": [
+    "Keystore",
+    "Cryptography",
+    "Encryption",
+    "Decryption",
+    "Secure Storage",
+    "Key Management",
+    "Cryptographic Utilities",
+    "Secure Data Storage",
+    "Encryption Algorithms",
+    "Decryption Tools",
+    "Blockchain Security",
+    "Cryptographic Library",
+    "JavaScript Cryptography",
+    "Node.js Cryptography",
+    "Secure Keystore Management",
+    "Cryptographic keystore management",
+    "Secure encryption and decryption",
+    "JavaScript cryptographic library",
+    "Node.js keystore management",
+    "Blockchain cryptographic security",
+    "Secure data storage solutions",
+    "Cryptographic utility package",
+    "Keystore generation and management",
+    "Secure cryptographic algorithms",
+    "Decentralized keystore management"
+  ],
+  "author": {
+    "name": "Harsh Rastogi",
+    "email": "rastogiharsh04@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xharshrastogi/moi-keystore/issues"
+  },
+  "homepage": "https://github.com/0xharshrastogi/moi-keystore#readme",
+  "dependencies": {
+    "ethereum-cryptography": "^3.0.0"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.10.9",
+    "@types/node": "^22.9.3",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
