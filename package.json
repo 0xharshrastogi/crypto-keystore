@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A JavaScript library for generating and managing keystores, supporting various encryption algorithms for secure data storage and decryption.",
   "type": "module",
+  "main": "./dist/lib.cjs/index.js",
+  "module": "./dist/lib.esm/index.js",
   "browser": {
     "./dist/lib.esm/src/crypto-utils.js": "./dist/lib.esm/src/browser/crypto-utils.js"
   },
