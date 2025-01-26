@@ -1,6 +1,6 @@
 {
   "name": "crypto-keystore",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript library for generating and managing keystores, supporting various encryption algorithms for secure data storage and decryption.",
   "type": "module",
   "main": "./dist/lib.cjs/index.js",
