@@ -3,7 +3,10 @@ import { getBytes, hexlify, scrypt } from "./crypto-utils.js";
 import type { Keystore } from "./encrypt.js";
 import { encodeText } from "./utils.js";
 
-export const decrypt = async (keystore: Keystore, password: string) => {
+export const decrypt = async (
+  keystore: Keystore,
+  password: string
+): Promise<Uint8Array> => {
   if (keystore.cipher !== "aes-128-ctr") {
     throw new Error(`Unsupported cipher ${keystore.cipher}`);
   }
@@ -40,7 +43,7 @@ export const decrypt = async (keystore: Keystore, password: string) => {
     ["decrypt"]
   );
 
-  return await globalThis.crypto.subtle.decrypt(
+  const data = await globalThis.crypto.subtle.decrypt(
     {
       name: "AES-CTR",
       counter: iv,
@@ -49,4 +52,5 @@ export const decrypt = async (keystore: Keystore, password: string) => {
     key,
     cipherText
   );
+  return new Uint8Array(data);
 };
