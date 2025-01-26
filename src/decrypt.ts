@@ -3,6 +3,15 @@ import { getBytes, hexlify, scrypt } from "./crypto-utils.js";
 import type { Keystore } from "./encrypt.js";
 import { encodeText } from "./utils.js";
 
+/**
+ * Decrypts the given keystore using the provided password.
+ *
+ * @param keystore - The keystore object containing encryption details.
+ * @param password - The password to decrypt the keystore.
+ * @returns A promise that resolves to a Uint8Array containing the decrypted data.
+ *
+ * @throws Will throw an error if the cipher or kdf is unsupported, or if the password is invalid.
+ */
 export const decrypt = async (
   keystore: Keystore,
   password: string

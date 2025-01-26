@@ -21,6 +21,16 @@ export type Keystore = {
 
 export type Algorithm = "aes-128-ctr";
 
+/**
+ * Encrypts the given data using the specified algorithm and password.
+ *
+ * @param data - The data to be encrypted as a Uint8Array.
+ * @param algorithm - The encryption algorithm to use. Currently, only "aes-128-ctr" is supported.
+ * @param password - The password to derive the encryption key from.
+ * @returns A promise that resolves to a Keystore object containing the encrypted data and encryption parameters.
+ *
+ * @throws Will throw an error if the specified algorithm is not supported.
+ */
 export const encrypt = async (
   data: Uint8Array,
   algorithm: Algorithm,
